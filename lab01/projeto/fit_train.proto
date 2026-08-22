@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package fittraingrpc;
+
+message Sample {
+    repeated double features = 1;
+    int32 label = 2;
+}
+
+message DataInput {
+    repeated Sample samples = 1;
+}
+
+message TrainOutput {
+    double accuracy = 1;
+    double time = 2;
+}
+
+service FitTrain {
+    rpc Train(DataInput) returns (TrainOutput) {};
+}
+
+message PredictInput {
+    repeated Sample samples = 1;
+}
+
+message PredictOutput {
+    repeated int32 predictions = 1;
+}
+
+service Predict {
+    rpc Predict(PredictInput) returns (PredictOutput) {};
+}

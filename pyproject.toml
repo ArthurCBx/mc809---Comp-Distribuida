@@ -1,0 +1,11 @@
+[project]
+name = "mc809-comp-distribuida"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "grpcio",
+    "grpcio-tools",
+    "scikit-learn"
+]

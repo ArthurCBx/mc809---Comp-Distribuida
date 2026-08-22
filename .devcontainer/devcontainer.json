@@ -1,0 +1,21 @@
+{
+  "name": "MC809 - Computacao Distribuida",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/mc809 - Comp Distribuida",
+  "forwardPorts": [50051],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "zxh404.vscode-proto3"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/opt/venv/bin/python",
+        "python.terminal.activateEnvironment": false
+      }
+    }
+  },
+  "postCreateCommand": "uv sync --all-extras"
+}
