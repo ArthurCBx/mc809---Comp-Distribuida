@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package federated;
+
+message DataRequest {
+    string client_id = 1;
+    string message = 2;
+    bytes  features = 3;
+}
+
+message DataResponse {
+    bool   success = 1;
+    string message = 2;
+}
+
+service ByzantineManager {
+    rpc SendData (DataRequest) returns (DataResponse) {}
+}

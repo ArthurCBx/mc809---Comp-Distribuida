@@ -7,5 +7,6 @@ requires-python = ">=3.12"
 dependencies = [
     "grpcio",
     "grpcio-tools",
-    "scikit-learn"
+    "scikit-learn",
+    "ray"
 ]
