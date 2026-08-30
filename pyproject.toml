@@ -8,5 +8,6 @@ dependencies = [
     "grpcio",
     "grpcio-tools",
     "scikit-learn",
-    "ray"
+    "ray",
+    "ipykernel"
 ]

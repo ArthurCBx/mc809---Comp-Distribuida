@@ -24,17 +24,19 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10train_eval.proto\x12\tfederated\"C\n\x0b\x44\x61taRequest\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x10\n\x08\x66\x65\x61tures\x18\x03 \x01(\x0c\"0\n\x0c\x44\x61taResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t2Q\n\x10\x42yzantineManager\x12=\n\x08SendData\x12\x16.federated.DataRequest\x1a\x17.federated.DataResponse\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10train_eval.proto\x12\tfederated\"\x1c\n\nFeatureRow\x12\x0e\n\x06values\x18\x01 \x03(\x01\"k\n\x0b\x44\x61taRequest\x12\x11\n\tclient_id\x18\x01 \x01(\x05\x12\x10\n\x08\x62\x65havior\x18\x02 \x01(\t\x12\'\n\x08\x66\x65\x61tures\x18\x03 \x03(\x0b\x32\x15.federated.FeatureRow\x12\x0e\n\x06labels\x18\x04 \x03(\x05\"4\n\x0c\x44\x61taResponse\x12\x13\n\x0bisBizantine\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t2Q\n\x10\x42yzantineManager\x12=\n\x08SendData\x12\x16.federated.DataRequest\x1a\x17.federated.DataResponse\"\x00\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'train_eval_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_DATAREQUEST']._serialized_start=31
-  _globals['_DATAREQUEST']._serialized_end=98
-  _globals['_DATARESPONSE']._serialized_start=100
-  _globals['_DATARESPONSE']._serialized_end=148
-  _globals['_BYZANTINEMANAGER']._serialized_start=150
-  _globals['_BYZANTINEMANAGER']._serialized_end=231
+  _globals['_FEATUREROW']._serialized_start=31
+  _globals['_FEATUREROW']._serialized_end=59
+  _globals['_DATAREQUEST']._serialized_start=61
+  _globals['_DATAREQUEST']._serialized_end=168
+  _globals['_DATARESPONSE']._serialized_start=170
+  _globals['_DATARESPONSE']._serialized_end=222
+  _globals['_BYZANTINEMANAGER']._serialized_start=224
+  _globals['_BYZANTINEMANAGER']._serialized_end=305
 # @@protoc_insertion_point(module_scope)

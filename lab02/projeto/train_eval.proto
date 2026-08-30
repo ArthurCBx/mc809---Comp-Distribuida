@@ -2,15 +2,21 @@ syntax = "proto3";
 
 package federated;
 
+// protobuf3 nao aceita "repeated repeated": cada linha de X vira uma FeatureRow
+message FeatureRow {
+    repeated double values = 1;
+}
+
 message DataRequest {
-    string client_id = 1;
-    string message = 2;
-    bytes  features = 3;
+    int32                client_id = 1;
+    string               behavior  = 2;  // apenas para log/avaliacao, o servidor nao usa na decisao
+    repeated FeatureRow  features  = 3;
+    repeated int32       labels    = 4;
 }
 
 message DataResponse {
-    bool   success = 1;
-    string message = 2;
+    bool   isBizantine     = 1;
+    string message         = 2;
 }
 
 service ByzantineManager {
