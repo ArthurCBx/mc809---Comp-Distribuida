@@ -6,8 +6,12 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "grpcio",
+    "pandas",
+    "matplotlib",
     "grpcio-tools",
     "scikit-learn",
     "ray",
-    "ipykernel"
+    "ipykernel",
+    "ucimlrepo",
+    "seaborn"
 ]
