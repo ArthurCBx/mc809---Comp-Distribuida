@@ -13,5 +13,6 @@ dependencies = [
     "ray",
     "ipykernel",
     "ucimlrepo",
-    "seaborn"
+    "seaborn",
+    "mlxtend"
 ]
