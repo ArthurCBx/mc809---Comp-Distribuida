@@ -1,0 +1,34 @@
+2026-09-05 20:16:54,166	WARNING services.py:2248 -- WARNING: The object store is using /tmp/ray instead of /dev/shm because /dev/shm has only 67108864 bytes available. This will harm performance! You may be able to free up space by deleting files in /dev/shm. If you are inside a Docker container, you can increase /dev/shm size by passing '--shm-size=1.46gb' to 'docker run' (or add it to the run_options list in a Ray cluster config). Make sure to set this to more than 30% of available RAM.
+2026-09-05 20:16:55,290	INFO worker.py:2024 -- Started a local Ray instance.
+2026-09-05 20:16:55,298	WARNING working_dir.py:91 -- Directory '__pycache__' is now ignored by default when packaging the working directory. To disable this behavior, set the `RAY_OVERRIDE_RUNTIME_ENV_DEFAULT_EXCLUDES=''` environment variable.
+2026-09-05 20:16:55,355	INFO packaging.py:734 -- Creating a file package for local module '/mc809 - Comp Distribuida/lab02/projeto'.
+2026-09-05 20:16:55,427	INFO packaging.py:434 -- Pushing file package 'gcs://_ray_pkg_0a30ceb3b45bc7c7.zip' (0.07MiB) to Ray cluster...
+2026-09-05 20:16:55,428	INFO packaging.py:447 -- Successfully pushed file package 'gcs://_ray_pkg_0a30ceb3b45bc7c7.zip'.
+2026-09-05 20:16:55,745 ======================================================================
+2026-09-05 20:16:55,745 Cenario com 5 clientes honestos
+2026-09-05 20:16:56,955   Client  1 (honest): Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:16:56,955   Client  2 (honest): Client 2 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:16:56,955   Client  3 (honest): Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:16:56,955   Client  4 (honest): Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:16:56,955   Client  5 (honest): Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:16:56,955 ======================================================================
+2026-09-05 20:16:56,955 Cenario com 1 cliente malicioso e 4 honestos (ID 4: single)
+2026-09-05 20:16:58,248   Client  1 (honest): Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:16:58,248   Client  2 (honest): Client 2 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:16:58,248   Client  3 (honest): Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:16:58,248   Client  4 (single): Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:16:58,248   Client  5 (honest): Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:16:58,248 ======================================================================
+2026-09-05 20:16:58,248 Cenario com 2 clientes maliciosos e 3 honestos (ID 2: flip | ID 4: random)
+2026-09-05 20:16:59,653   Client  1 (honest): Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:16:59,653   Client  2 (  flip): Client 2 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:16:59,653   Client  3 (honest): Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:16:59,653   Client  4 (random): Client 4 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:16:59,653   Client  5 (honest): Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:16:59,653 ======================================================================
+2026-09-05 20:16:59,653 Cenario com 3 clientes maliciosos e 2 honestos (ID 2: flip | ID 4: single | ID 5: random)
+2026-09-05 20:17:00,878   Client  1 (honest): Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:00,878   Client  2 (  flip): Client 2 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:00,878   Client  3 (honest): Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:00,878   Client  4 (single): Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:00,878   Client  5 (random): Client 5 was defined as a Byzantine client. Its data will not be used to train the model.

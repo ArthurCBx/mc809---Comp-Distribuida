@@ -1,0 +1,293 @@
+2026-09-05 20:16:50,205	WARNING services.py:2248 -- WARNING: The object store is using /tmp/ray instead of /dev/shm because /dev/shm has only 67108864 bytes available. This will harm performance! You may be able to free up space by deleting files in /dev/shm. If you are inside a Docker container, you can increase /dev/shm size by passing '--shm-size=1.68gb' to 'docker run' (or add it to the run_options list in a Ray cluster config). Make sure to set this to more than 30% of available RAM.
+2026-09-05 20:16:51,325	INFO worker.py:2024 -- Started a local Ray instance.
+2026-09-05 20:16:51,331	WARNING working_dir.py:91 -- Directory '__pycache__' is now ignored by default when packaging the working directory. To disable this behavior, set the `RAY_OVERRIDE_RUNTIME_ENV_DEFAULT_EXCLUDES=''` environment variable.
+2026-09-05 20:16:51,385	INFO packaging.py:734 -- Creating a file package for local module '/mc809 - Comp Distribuida/lab02/projeto'.
+2026-09-05 20:16:51,519	INFO packaging.py:434 -- Pushing file package 'gcs://_ray_pkg_e325a7948930b17b.zip' (0.07MiB) to Ray cluster...
+2026-09-05 20:16:51,520	INFO packaging.py:447 -- Successfully pushed file package 'gcs://_ray_pkg_e325a7948930b17b.zip'.
+2026-09-05 20:16:51,879 Server started at 50051
+2026-09-05 20:16:56,427 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:16:56,459 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:16:56,462 Client 2 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:16:56,499 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:16:56,953 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:16:56,954 All 5 clients received. Model trained with 5 honest client(s) (5000 samples).
+Final model score on test data: 0.6391
+2026-09-05 20:16:57,727 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:16:57,733 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:16:57,743 Client 2 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:16:57,768 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:16:58,246 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:16:58,247 All 5 clients received. Model trained with 5 honest client(s) (5000 samples).
+Final model score on test data: 0.5355
+2026-09-05 20:16:59,084 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:16:59,096 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:16:59,162 Client 2 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:16:59,165 Client 4 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:16:59,627 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:16:59,636 All 5 clients received. Model trained with 3 honest client(s) (3000 samples).
+Final model score on test data: 0.7118
+2026-09-05 20:17:00,324 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:00,413 Client 2 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:00,426 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:00,484 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:00,877 Client 5 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:00,877 All 5 clients received. Model trained with 3 honest client(s) (3000 samples).
+Final model score on test data: 0.7058
+2026-09-05 20:17:06,288 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:06,295 Client 2 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:06,361 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:06,363 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:06,836 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:06,837 All 5 clients received. Model trained with 5 honest client(s) (5000 samples).
+Final model score on test data: 0.6904
+2026-09-05 20:17:07,621 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:07,629 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:07,644 Client 2 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:07,668 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:08,143 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:08,144 All 5 clients received. Model trained with 5 honest client(s) (5000 samples).
+Final model score on test data: 0.6997
+2026-09-05 20:17:08,903 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:08,910 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:08,914 Client 2 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:08,934 Client 4 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:09,413 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:09,413 All 5 clients received. Model trained with 3 honest client(s) (3000 samples).
+Final model score on test data: 0.6235
+2026-09-05 20:17:10,068 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:10,070 Client 2 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:10,237 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:10,265 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:10,610 Client 5 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:10,611 All 5 clients received. Model trained with 3 honest client(s) (3000 samples).
+Final model score on test data: 0.6062
+2026-09-05 20:17:16,043 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:16,063 Client 2 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:16,100 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:16,144 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:16,600 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:16,614 All 5 clients received. Model trained with 5 honest client(s) (5000 samples).
+Final model score on test data: 0.6255
+2026-09-05 20:17:17,334 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:17,390 Client 2 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:17,419 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:17,455 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:17,869 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:17,870 All 5 clients received. Model trained with 5 honest client(s) (5000 samples).
+Final model score on test data: 0.6613
+2026-09-05 20:17:18,583 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:18,670 Client 2 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:18,707 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:18,738 Client 4 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:19,107 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:19,107 All 5 clients received. Model trained with 3 honest client(s) (3000 samples).
+Final model score on test data: 0.6596
+2026-09-05 20:17:19,894 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:19,894 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:19,895 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:19,897 Client 2 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:20,399 Client 5 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:20,400 All 5 clients received. Model trained with 3 honest client(s) (3000 samples).
+Final model score on test data: 0.5718
+2026-09-05 20:17:25,628 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:25,632 Client 2 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:25,674 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:25,685 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:26,175 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:26,175 All 5 clients received. Model trained with 5 honest client(s) (5000 samples).
+Final model score on test data: 0.6690
+2026-09-05 20:17:26,958 Client 2 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:26,964 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:26,979 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:27,013 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:27,478 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:27,478 All 5 clients received. Model trained with 5 honest client(s) (5000 samples).
+Final model score on test data: 0.7033
+2026-09-05 20:17:28,272 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:28,274 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:28,289 Client 2 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:28,308 Client 4 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:28,787 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:28,787 All 5 clients received. Model trained with 3 honest client(s) (3000 samples).
+Final model score on test data: 0.6111
+2026-09-05 20:17:29,460 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:29,530 Client 2 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:29,561 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:29,583 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:29,999 Client 5 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:29,999 All 5 clients received. Model trained with 3 honest client(s) (3000 samples).
+Final model score on test data: 0.4260
+2026-09-05 20:17:35,441 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:35,477 Client 2 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:35,520 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:35,558 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:35,979 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:35,980 All 5 clients received. Model trained with 5 honest client(s) (5000 samples).
+Final model score on test data: 0.5962
+2026-09-05 20:17:36,784 Client 2 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:36,789 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:36,794 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:36,795 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:37,293 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:37,293 All 5 clients received. Model trained with 5 honest client(s) (5000 samples).
+Final model score on test data: 0.5426
+2026-09-05 20:17:38,003 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:38,059 Client 2 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:38,073 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:38,154 Client 4 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:38,532 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:38,532 All 5 clients received. Model trained with 3 honest client(s) (3000 samples).
+Final model score on test data: 0.7186
+2026-09-05 20:17:39,402 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:39,404 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:39,474 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:39,528 Client 2 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:39,921 Client 5 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:39,921 All 5 clients received. Model trained with 3 honest client(s) (3000 samples).
+Final model score on test data: 0.6180
+2026-09-05 20:17:45,203 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:45,210 Client 2 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:45,233 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:45,266 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:45,730 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:45,730 All 5 clients received. Model trained with 5 honest client(s) (5000 samples).
+Final model score on test data: 0.6935
+2026-09-05 20:17:46,460 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:46,489 Client 2 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:46,540 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:46,589 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:46,948 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:46,950 All 5 clients received. Model trained with 5 honest client(s) (5000 samples).
+Final model score on test data: 0.6205
+2026-09-05 20:17:47,680 Client 2 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:47,690 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:47,697 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:47,742 Client 4 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:48,217 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:48,218 All 5 clients received. Model trained with 3 honest client(s) (3000 samples).
+Final model score on test data: 0.6441
+2026-09-05 20:17:48,988 Client 2 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:49,010 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:49,012 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:49,049 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:49,497 Client 5 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:49,497 All 5 clients received. Model trained with 3 honest client(s) (3000 samples).
+Final model score on test data: 0.6984
+2026-09-05 20:17:54,840 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:54,860 Client 2 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:54,870 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:54,906 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:55,360 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:55,360 All 5 clients received. Model trained with 5 honest client(s) (5000 samples).
+Final model score on test data: 0.6791
+2026-09-05 20:17:56,074 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:56,094 Client 2 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:56,145 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:56,210 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:56,594 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:56,595 All 5 clients received. Model trained with 5 honest client(s) (5000 samples).
+Final model score on test data: 0.6169
+2026-09-05 20:17:57,285 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:57,368 Client 2 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:57,448 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:57,498 Client 4 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:57,855 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:57,855 All 5 clients received. Model trained with 3 honest client(s) (3000 samples).
+Final model score on test data: 0.6458
+2026-09-05 20:17:58,528 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:58,592 Client 2 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:58,630 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:58,646 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:17:59,050 Client 5 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:17:59,052 All 5 clients received. Model trained with 3 honest client(s) (3000 samples).
+Final model score on test data: 0.7099
+2026-09-05 20:18:04,312 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:04,365 Client 2 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:04,385 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:04,430 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:04,883 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:04,883 All 5 clients received. Model trained with 5 honest client(s) (5000 samples).
+Final model score on test data: 0.7101
+2026-09-05 20:18:05,680 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:05,684 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:05,708 Client 2 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:05,759 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:06,189 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:06,190 All 5 clients received. Model trained with 5 honest client(s) (5000 samples).
+Final model score on test data: 0.6021
+2026-09-05 20:18:06,901 Client 2 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:18:06,952 Client 4 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:18:06,953 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:06,975 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:07,426 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:07,426 All 5 clients received. Model trained with 3 honest client(s) (3000 samples).
+Final model score on test data: 0.7204
+2026-09-05 20:18:08,185 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:08,212 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:08,225 Client 2 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:18:08,239 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:08,694 Client 5 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:18:08,694 All 5 clients received. Model trained with 3 honest client(s) (3000 samples).
+Final model score on test data: 0.7033
+2026-09-05 20:18:14,079 Client 2 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:14,091 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:14,095 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:14,118 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:14,602 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:14,604 All 5 clients received. Model trained with 5 honest client(s) (5000 samples).
+Final model score on test data: 0.5629
+2026-09-05 20:18:15,393 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:15,395 Client 2 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:15,500 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:15,512 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:15,869 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:15,870 All 5 clients received. Model trained with 5 honest client(s) (5000 samples).
+Final model score on test data: 0.7241
+2026-09-05 20:18:16,580 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:16,600 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:16,642 Client 4 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:18:16,644 Client 2 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:18:17,118 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:17,118 All 5 clients received. Model trained with 3 honest client(s) (3000 samples).
+Final model score on test data: 0.6577
+2026-09-05 20:18:17,804 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:17,818 Client 2 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:18:17,918 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:17,933 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:18,326 Client 5 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:18:18,326 All 5 clients received. Model trained with 3 honest client(s) (3000 samples).
+Final model score on test data: 0.6738
+2026-09-05 20:18:23,686 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:23,702 Client 2 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:23,733 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:23,771 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:24,243 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:24,243 All 5 clients received. Model trained with 5 honest client(s) (5000 samples).
+Final model score on test data: 0.7214
+2026-09-05 20:18:24,981 Client 2 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:24,989 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:25,053 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:25,063 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:25,514 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:25,514 All 5 clients received. Model trained with 5 honest client(s) (5000 samples).
+Final model score on test data: 0.4954
+2026-09-05 20:18:26,253 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:26,275 Client 2 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:18:26,276 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:26,286 Client 4 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:18:26,764 Client 5 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:26,766 All 5 clients received. Model trained with 3 honest client(s) (3000 samples).
+Final model score on test data: 0.6171
+2026-09-05 20:18:27,513 Client 1 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:27,521 Client 2 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:18:27,605 Client 3 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:27,650 Client 4 was classified as honest. Its data will be used to train the model.
+2026-09-05 20:18:28,031 Client 5 was defined as a Byzantine client. Its data will not be used to train the model.
+2026-09-05 20:18:28,031 All 5 clients received. Model trained with 3 honest client(s) (3000 samples).
+Final model score on test data: 0.6939
+*** SIGTERM received at time=1788639509 on cpu 2 ***
+PC: @     0x75c27fdb39ee  (unknown)  (unknown)
+    @     0x75c27fd58df0  (unknown)  (unknown)
+[2026-09-05 20:18:29,560 E 71528 71528] logging.cc:474: *** SIGTERM received at time=1788639509 on cpu 2 ***
+[2026-09-05 20:18:29,560 E 71528 71528] logging.cc:474: PC: @     0x75c27fdb39ee  (unknown)  (unknown)
+[2026-09-05 20:18:29,560 E 71528 71528] logging.cc:474:     @     0x75c27fd58df0  (unknown)  (unknown)
