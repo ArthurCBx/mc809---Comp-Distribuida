@@ -7,3 +7,4 @@ services:
     volumes:
       - ..:/mc809 - Comp Distribuida:cached
     command: /bin/sh -c "while sleep 1000; do :; done"
+    gpus: all

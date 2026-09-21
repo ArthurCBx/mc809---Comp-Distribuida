@@ -17,5 +17,5 @@
       }
     }
   },
-  "postCreateCommand": "uv sync --all-extras"
+  "postCreateCommand": "uv sync --all-extras && find /opt/venv/lib/python*/site-packages/nvidia -name '*.so*' -printf '%h\\n' | sort -u > /etc/ld.so.conf.d/nvidia-pip.conf && ldconfig"
 }

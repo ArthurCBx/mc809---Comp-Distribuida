@@ -10,7 +10,7 @@ dependencies = [
     "matplotlib",
     "grpcio-tools",
     "scikit-learn",
-    "tensorflow",
+    "tensorflow[and-cuda]",
     "keras",
     "keras-tuner",
     "ray",

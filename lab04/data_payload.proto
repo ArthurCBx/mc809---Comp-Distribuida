@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package federated;
+import "google/protobuf/empty.proto";
+
+message DataPayload {
+    repeated double output_vector = 1;
+    int32 pair_id                 = 2;
+    int32 client_id               = 3;
+    int32 class_id                = 4;
+}
+
+service SimilarityService {
+    rpc CompareData (DataPayload) returns (google.protobuf.Empty);
+}
