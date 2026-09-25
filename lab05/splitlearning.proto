@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package splitlearning;
+
+
+message Activations {
+    repeated float activations = 1;
+    int32 batch_size           = 2;
+    int32 client_id            = 3;
+}
+
+message BackPropagate {
+    repeated float gradients = 1;
+    float loss               = 2;
+    int32 client_id          = 3;
+}
+
+service ClientToServer {
+    rpc SendClient1Activations(Activations) returns (Activations) {}
+}
+
+service ServerToClient {
+    rpc SendServerActivations(BackPropagate) returns (BackPropagate) {}
+}
