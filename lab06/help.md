@@ -1,0 +1,1 @@
+É preciso mapear o id real do cliente (hexadecimal) para o id que será utilizado
