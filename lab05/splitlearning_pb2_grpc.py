@@ -25,7 +25,7 @@ if _version_not_supported:
     )
 
 
-class ClientToServerStub:
+class SendActivationsStub:
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -34,43 +34,43 @@ class ClientToServerStub:
         Args:
             channel: A grpc.Channel.
         """
-        self.SendClient1Activations = channel.unary_unary(
-                '/splitlearning.ClientToServer/SendClient1Activations',
+        self.SendClientActivations = channel.unary_unary(
+                '/splitlearning.SendActivations/SendClientActivations',
                 request_serializer=splitlearning__pb2.Activations.SerializeToString,
                 response_deserializer=splitlearning__pb2.Activations.FromString,
                 _registered_method=True)
 
 
-class ClientToServerServicer:
+class SendActivationsServicer:
     """Missing associated documentation comment in .proto file."""
 
-    def SendClient1Activations(self, request, context):
+    def SendClientActivations(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
 
-def add_ClientToServerServicer_to_server(servicer, server):
+def add_SendActivationsServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'SendClient1Activations': grpc.unary_unary_rpc_method_handler(
-                    servicer.SendClient1Activations,
+            'SendClientActivations': grpc.unary_unary_rpc_method_handler(
+                    servicer.SendClientActivations,
                     request_deserializer=splitlearning__pb2.Activations.FromString,
                     response_serializer=splitlearning__pb2.Activations.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'splitlearning.ClientToServer', rpc_method_handlers)
+            'splitlearning.SendActivations', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('splitlearning.ClientToServer', rpc_method_handlers)
+    server.add_registered_method_handlers('splitlearning.SendActivations', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
-class ClientToServer:
+class SendActivations:
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def SendClient1Activations(request,
+    def SendClientActivations(request,
             target,
             options=(),
             channel_credentials=None,
@@ -83,7 +83,7 @@ class ClientToServer:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/splitlearning.ClientToServer/SendClient1Activations',
+            '/splitlearning.SendActivations/SendClientActivations',
             splitlearning__pb2.Activations.SerializeToString,
             splitlearning__pb2.Activations.FromString,
             options,
@@ -97,7 +97,7 @@ class ClientToServer:
             _registered_method=True)
 
 
-class ServerToClientStub:
+class SendClientGradientsStub:
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -106,43 +106,43 @@ class ServerToClientStub:
         Args:
             channel: A grpc.Channel.
         """
-        self.SendServerActivations = channel.unary_unary(
-                '/splitlearning.ServerToClient/SendServerActivations',
+        self.SendGradients = channel.unary_unary(
+                '/splitlearning.SendClientGradients/SendGradients',
                 request_serializer=splitlearning__pb2.BackPropagate.SerializeToString,
                 response_deserializer=splitlearning__pb2.BackPropagate.FromString,
                 _registered_method=True)
 
 
-class ServerToClientServicer:
+class SendClientGradientsServicer:
     """Missing associated documentation comment in .proto file."""
 
-    def SendServerActivations(self, request, context):
+    def SendGradients(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
 
-def add_ServerToClientServicer_to_server(servicer, server):
+def add_SendClientGradientsServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'SendServerActivations': grpc.unary_unary_rpc_method_handler(
-                    servicer.SendServerActivations,
+            'SendGradients': grpc.unary_unary_rpc_method_handler(
+                    servicer.SendGradients,
                     request_deserializer=splitlearning__pb2.BackPropagate.FromString,
                     response_serializer=splitlearning__pb2.BackPropagate.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'splitlearning.ServerToClient', rpc_method_handlers)
+            'splitlearning.SendClientGradients', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('splitlearning.ServerToClient', rpc_method_handlers)
+    server.add_registered_method_handlers('splitlearning.SendClientGradients', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
-class ServerToClient:
+class SendClientGradients:
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def SendServerActivations(request,
+    def SendGradients(request,
             target,
             options=(),
             channel_credentials=None,
@@ -155,9 +155,81 @@ class ServerToClient:
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/splitlearning.ServerToClient/SendServerActivations',
+            '/splitlearning.SendClientGradients/SendGradients',
             splitlearning__pb2.BackPropagate.SerializeToString,
             splitlearning__pb2.BackPropagate.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+
+class TestActivationsStub:
+    """Missing associated documentation comment in .proto file."""
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.TestActivations = channel.unary_unary(
+                '/splitlearning.TestActivations/TestActivations',
+                request_serializer=splitlearning__pb2.Activations.SerializeToString,
+                response_deserializer=splitlearning__pb2.Activations.FromString,
+                _registered_method=True)
+
+
+class TestActivationsServicer:
+    """Missing associated documentation comment in .proto file."""
+
+    def TestActivations(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_TestActivationsServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'TestActivations': grpc.unary_unary_rpc_method_handler(
+                    servicer.TestActivations,
+                    request_deserializer=splitlearning__pb2.Activations.FromString,
+                    response_serializer=splitlearning__pb2.Activations.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'splitlearning.TestActivations', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('splitlearning.TestActivations', rpc_method_handlers)
+
+
+ # This class is part of an EXPERIMENTAL API.
+class TestActivations:
+    """Missing associated documentation comment in .proto file."""
+
+    @staticmethod
+    def TestActivations(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/splitlearning.TestActivations/TestActivations',
+            splitlearning__pb2.Activations.SerializeToString,
+            splitlearning__pb2.Activations.FromString,
             options,
             channel_credentials,
             insecure,

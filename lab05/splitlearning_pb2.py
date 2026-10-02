@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13splitlearning.proto\x12\rsplitlearning\"I\n\x0b\x41\x63tivations\x12\x13\n\x0b\x61\x63tivations\x18\x01 \x03(\x02\x12\x12\n\nbatch_size\x18\x02 \x01(\x05\x12\x11\n\tclient_id\x18\x03 \x01(\x05\"C\n\rBackPropagate\x12\x11\n\tgradients\x18\x01 \x03(\x02\x12\x0c\n\x04loss\x18\x02 \x01(\x02\x12\x11\n\tclient_id\x18\x03 \x01(\x05\x32\x64\n\x0e\x43lientToServer\x12R\n\x16SendClient1Activations\x12\x1a.splitlearning.Activations\x1a\x1a.splitlearning.Activations\"\x00\x32g\n\x0eServerToClient\x12U\n\x15SendServerActivations\x12\x1c.splitlearning.BackPropagate\x1a\x1c.splitlearning.BackPropagate\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13splitlearning.proto\x12\rsplitlearning\"[\n\x0b\x41\x63tivations\x12\x13\n\x0b\x61\x63tivations\x18\x01 \x03(\x02\x12\x12\n\nbatch_size\x18\x02 \x01(\x05\x12\x11\n\tclient_id\x18\x03 \x01(\x05\x12\x10\n\x08\x62\x61tch_id\x18\x04 \x01(\x05\"[\n\rBackPropagate\x12\x11\n\tgradients\x18\x01 \x03(\x02\x12\x12\n\nbatch_size\x18\x02 \x01(\x05\x12\x11\n\tclient_id\x18\x03 \x01(\x05\x12\x10\n\x08\x62\x61tch_id\x18\x04 \x01(\x05\x32\x64\n\x0fSendActivations\x12Q\n\x15SendClientActivations\x12\x1a.splitlearning.Activations\x1a\x1a.splitlearning.Activations\"\x00\x32\x64\n\x13SendClientGradients\x12M\n\rSendGradients\x12\x1c.splitlearning.BackPropagate\x1a\x1c.splitlearning.BackPropagate\"\x00\x32^\n\x0fTestActivations\x12K\n\x0fTestActivations\x12\x1a.splitlearning.Activations\x1a\x1a.splitlearning.Activations\"\x00\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,11 +32,13 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'splitlearning_pb2', _global
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
   _globals['_ACTIVATIONS']._serialized_start=38
-  _globals['_ACTIVATIONS']._serialized_end=111
-  _globals['_BACKPROPAGATE']._serialized_start=113
-  _globals['_BACKPROPAGATE']._serialized_end=180
-  _globals['_CLIENTTOSERVER']._serialized_start=182
-  _globals['_CLIENTTOSERVER']._serialized_end=282
-  _globals['_SERVERTOCLIENT']._serialized_start=284
-  _globals['_SERVERTOCLIENT']._serialized_end=387
+  _globals['_ACTIVATIONS']._serialized_end=129
+  _globals['_BACKPROPAGATE']._serialized_start=131
+  _globals['_BACKPROPAGATE']._serialized_end=222
+  _globals['_SENDACTIVATIONS']._serialized_start=224
+  _globals['_SENDACTIVATIONS']._serialized_end=324
+  _globals['_SENDCLIENTGRADIENTS']._serialized_start=326
+  _globals['_SENDCLIENTGRADIENTS']._serialized_end=426
+  _globals['_TESTACTIVATIONS']._serialized_start=428
+  _globals['_TESTACTIVATIONS']._serialized_end=522
 # @@protoc_insertion_point(module_scope)
