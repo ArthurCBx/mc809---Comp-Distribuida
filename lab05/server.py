@@ -31,32 +31,37 @@ class SplitLearningServer(pb2_grpc.SendActivationsServicer, pb2_grpc.SendClientG
 
     def SendClientActivations(self, request, context):
         """Forward do meio do modelo total."""
-        A1 = tf.constant(request.activations, dtype=tf.float32)
-        A1 = tf.reshape(A1, (request.batch_size, 6, 6, 64))
-
-        with tf.GradientTape() as tape:
-            tape.watch(A1)
-            A2 = self.model(A1, training=True)
+        # O TensorFlow não é seguro para operações eager concorrentes na mesma GPU: operações simultâneas
+        # em threads diferentes podem trocar tensores entre si. Toda operação de TF (inclusive as conversões
+        # tf.constant/reshape/numpy) passa pelo lock; só a montagem da mensagem protobuf fica de fora.
+        with self.lock:
+            A1 = tf.constant(request.activations, dtype=tf.float32)
+            A1 = tf.reshape(A1, (request.batch_size, 6, 6, 64))
+            with tf.GradientTape() as tape:
+                tape.watch(A1)
+                A2 = self.model(A1, training=True)
+            A2_values = A2.numpy().flatten()
 
         self.pending[(request.client_id, request.batch_id)] = (tape, A1, A2)
-        return pb2.Activations(activations=A2.numpy().flatten(), batch_size=request.batch_size, client_id=request.client_id, batch_id=request.batch_id)
+        return pb2.Activations(activations=A2_values, batch_size=request.batch_size, client_id=request.client_id, batch_id=request.batch_id)
 
     def SendGradients(self, request, context):
         """Backpropagation do meio do modelo total."""
         tape, A1, A2 = self.pending.pop((request.client_id, request.batch_id))
-        dL_dA2 = tf.reshape(tf.constant(request.gradients, dtype=tf.float32), A2.shape)
-        grads = tape.gradient(A2, [A1] + self.model.trainable_variables, output_gradients=dL_dA2)
-        dL_dA1 = grads[0]
         with self.lock:
+            dL_dA2 = tf.reshape(tf.constant(request.gradients, dtype=tf.float32), A2.shape)
+            grads = tape.gradient(A2, [A1] + self.model.trainable_variables, output_gradients=dL_dA2)
             self.optimizer.apply_gradients(zip(grads[1:], self.model.trainable_variables))
-        return pb2.BackPropagate(gradients=dL_dA1.numpy().flatten(), batch_size=request.batch_size, client_id=request.client_id, batch_id=request.batch_id)
+            dL_dA1_values = grads[0].numpy().flatten()
+        return pb2.BackPropagate(gradients=dL_dA1_values, batch_size=request.batch_size, client_id=request.client_id, batch_id=request.batch_id)
 
     def TestActivations(self, request, context):
         """Testa o envio de ativações do cliente para o servidor."""
-        A1 = tf.constant(request.activations, dtype=tf.float32)
-        A1 = tf.reshape(A1, (request.batch_size, 6, 6, 64))
-        A2 = self.model(A1, training=False)
-        return pb2.Activations(activations=A2.numpy().flatten(), batch_size=request.batch_size, client_id=request.client_id, batch_id=request.batch_id)
+        with self.lock:
+            A1 = tf.constant(request.activations, dtype=tf.float32)
+            A1 = tf.reshape(A1, (request.batch_size, 6, 6, 64))
+            A2_values = self.model(A1, training=False).numpy().flatten()
+        return pb2.Activations(activations=A2_values, batch_size=request.batch_size, client_id=request.client_id, batch_id=request.batch_id)
 
 def serve():
     servicer = SplitLearningServer()
