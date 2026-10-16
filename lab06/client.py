@@ -1,4 +1,6 @@
+import os
 import flwr as fl
+import numpy as np
 import tensorflow as tf
 from flwr_datasets import FederatedDataset
 from flwr_datasets.partitioner import IidPartitioner, DirichletPartitioner
@@ -6,37 +8,45 @@ from flwr_datasets.visualization import plot_label_distributions, plot_compariso
 
 
 class Cliente(fl.client.NumPyClient):
-    def __init__(self, cid, niid, num_clients, dirichlet_alpha):
-        self.cid             = int(cid)
-        self.niid            = niid
-        self.num_clients     = num_clients
-        self.dirichlet_alpha = dirichlet_alpha
+    def __init__(self, cid, niid, num_clients, dirichlet_alpha, num_train_clients, log_dir='.'):
+        self.cid               = int(cid)
+        self.niid              = niid
+        self.num_clients       = num_clients
+        self.dirichlet_alpha   = dirichlet_alpha
+        self.num_train_clients = num_train_clients
+        self.log_dir           = log_dir
 
-        self.x_train, self.y_train, self.x_test, self.y_test = self.load_data()
-        self.model                                           = self.create_model(self.x_train.shape)
+        # Cross-device: clientes [0, num_train_clients) só treinam e os demais só avaliam
+        self.is_train_client = self.cid < num_train_clients
+
+        self.x, self.y = self.load_data()
+        self.model     = self.create_model(self.x.shape)
 
     def get_parameters(self, config):
         return self.model.get_weights()
 
+    def get_properties(self, config):
+        # Permite ao servidor mapear o id do ClientProxy (node_id) para o id lógico do cliente
+        return {'cid': self.cid, 'is_train_client': self.is_train_client}
+
     def load_data(self):
+        # Clientes de treino particionam apenas o split "train" e clientes de avaliação apenas o "test"
+        if self.is_train_client:
+            split, num_partitions, partition_id = 'train', self.num_train_clients, self.cid
+        else:
+            split, num_partitions, partition_id = 'test', self.num_clients - self.num_train_clients, self.cid - self.num_train_clients
+
         if self.niid:
-            partitioner_train = DirichletPartitioner(num_partitions=self.num_clients, partition_by="label",
-                                    alpha=self.dirichlet_alpha, min_partition_size=0,
-                                    self_balancing=False)
-            partitioner_test = DirichletPartitioner(num_partitions=self.num_clients, partition_by="label",
+            partitioner = DirichletPartitioner(num_partitions=num_partitions, partition_by="label",
                                     alpha=self.dirichlet_alpha, min_partition_size=0,
                                     self_balancing=False)
         else:
-            partitioner_train =  IidPartitioner(num_partitions=self.num_clients)
-            partitioner_test  = IidPartitioner(num_partitions=self.num_clients)
+            partitioner = IidPartitioner(num_partitions=num_partitions)
 
-        fds               = FederatedDataset(dataset='mnist', partitioners={"train": partitioner_train})
-        train             = fds.load_partition(self.cid).with_format("numpy")
+        fds  = FederatedDataset(dataset='ylecun/mnist', partitioners={split: partitioner})
+        data = fds.load_partition(partition_id, split).with_format("numpy")
 
-        fds_eval          = FederatedDataset(dataset='mnist', partitioners={"test": partitioner_test})
-        test              = fds_eval.load_partition(self.cid).with_format("numpy")
-
-        return train['image']/255.0, train['label'], test['image']/255.0, test['label']
+        return np.asarray(data['image'])/255.0, np.asarray(data['label'])
 
     def create_model(self, input_shape):
         model = tf.keras.models.Sequential([
@@ -53,9 +63,10 @@ class Cliente(fl.client.NumPyClient):
         return model
 
     def fit(self, parameters, config):
+        assert self.is_train_client, f'Cliente {self.cid} é de avaliação e não deveria treinar'
         self.model.set_weights(parameters)
 
-        history = self.model.fit(self.x_train, self.y_train, epochs=1)
+        history = self.model.fit(self.x, self.y, epochs=1)
         acc     = np.mean(history.history['accuracy'])
         loss    = np.mean(history.history['loss'])
 
@@ -68,19 +79,20 @@ class Cliente(fl.client.NumPyClient):
         }
 
         self.log_client('train.csv', config['server_round'], acc, loss)
-        return trained_parameters, len(self.x_train), fit_msg
+        return trained_parameters, len(self.x), fit_msg
 
     def evaluate(self, parameters, config):
+        assert not self.is_train_client, f'Cliente {self.cid} é de treino e não deveria avaliar'
         self.model.set_weights(parameters)
-        loss, acc = self.model.evaluate(self.x_test, self.y_test)
+        loss, acc = self.model.evaluate(self.x, self.y)
         eval_msg = {
             'cid'     : self.cid,
             'accuracy': acc,
             'loss'    : loss
         }
         self.log_client('evaluate.csv', config['server_round'], acc, loss)
-        return loss, len(self.x_test), eval_msg
+        return loss, len(self.x), eval_msg
 
     def log_client(self, file_name, server_round, acc, loss):
-        with open(file_name, 'a') as file:
+        with open(os.path.join(self.log_dir, file_name), 'a') as file:
             file.write(f'{server_round}, {self.cid}, {acc}, {loss}\n')
